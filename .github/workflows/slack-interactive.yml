@@ -26,7 +26,7 @@ jobs:
       - name: Validate Questions
         id: check-questions
         run: |
-          if grep -q "${{ inputs.question }}" questions.yml; then
+          if grep -q 'questions.yml'; then
             echo "Questions are valid"
             echo "has_new_question=true" >> $GITHUB_OUTPUT
           else
