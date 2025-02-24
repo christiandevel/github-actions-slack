@@ -1,0 +1,11 @@
+preguntas:
+  - pregunta: "¿Qué comando se usa para inicializar un repositorio de Git?"
+    respuesta: "git init"
+  - pregunta: "¿Cuál es el comando para crear una nueva rama en Git?"
+    respuesta: "git checkout -b <nombre-de-la-rama>"
+  - pregunta: "¿Qué archivo en un proyecto define las dependencias en Node.js?"
+    respuesta: "package.json"
+  - pregunta: "¿Qué significa CI en el flujo de desarrollo de software?"
+    respuesta: "Integración Continua"
+  - pregunta: "¿Qué comando se usa para ver el historial de commits?"
+    respuesta: "git log"

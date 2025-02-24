@@ -15,8 +15,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Get Questions
+        run: |
+          QUESTION=$(shuf -n 1 questions.yml | cut -d '-' -f2-)
+          echo "QUESTION=$QUESTION" >> $GITHUB_ENV
     
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      # - name: Slack Notification
+      #   uses: rtCamp/action-slack-notify@v2
+      #   env:
+      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
