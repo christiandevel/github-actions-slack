@@ -39,8 +39,8 @@ Puedes ejecutar manualmente el flujo desde la pestaña de acciones de GitHub con
 
 1. Clona el repositorio:
 	```
-		git clone https://github.com/tu-usuario/tu-repo.git
-		cd tu-repo
+		git clone https://github.com/christiandevel/github-actions-slack.git
+		cd github-actions-slack
 	```
 
 2. Agrega nuevas preguntas en questions.yml con el formato:
