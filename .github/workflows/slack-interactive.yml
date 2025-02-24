@@ -25,7 +25,7 @@ jobs:
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_MESSAGE: We have a new question: ${{ env.QUESTION }}
+          SLACK_MESSAGE: We have a new question: "${{ env.QUESTION }}"
           SLACK_TITLE: Quiz
           SLACK_COLOR: good
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
