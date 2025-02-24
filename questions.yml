@@ -18,4 +18,5 @@ preguntas:
   - pregunta: "¿Cómo se puede configurar un evento de tag en GitHub Actions?"
   - pregunta: "¿Cómo se puede configurar un evento de workflow_dispatch en GitHub Actions?"
   - pregunta: "¿Cómo se puede configurar un evento de schedule en GitHub Actions?"
+  - pregunta: "¿Cómo se puede configurar un evento de watch en GitHub Actions?"
   
