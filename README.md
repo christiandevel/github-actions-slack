@@ -30,7 +30,7 @@ Puedes ejecutar manualmente el flujo desde la pestaña de acciones de GitHub con
 ¡Participa en las preguntas y responde en tiempo real con otros miembros del curso! 🚀
 
 - Únete al canal de Slack usando este enlace: [Unirse al canal](https://githubactions-k3n8492.slack.com/archives/C08F46XFL2D) 
-🔗🔗
+🔗
 - Asegúrate de estar registrado con el mismo correo que usas en GitHub para recibir notificaciones personalizadas.
 
 
