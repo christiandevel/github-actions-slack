@@ -38,22 +38,23 @@ Puedes ejecutar manualmente el flujo desde la pestaña de acciones de GitHub con
 
 
 1. Clona el repositorio:
-
-
-`git clone https://github.com/tu-usuario/tu-repo.git
-cd tu-repo`
+	```
+		git clone https://github.com/tu-usuario/tu-repo.git
+		cd tu-repo
+	```
 
 2. Agrega nuevas preguntas en questions.yml con el formato:
-
-
-`- ¿Cuál es la capital de Francia?
-- ¿Qué lenguaje se usa en GitHub Actions?`
+	```
+		- ¿Cuál es la capital de Francia?
+		- ¿Qué lenguaje se usa en GitHub Actions?`
+	```
 
 3. Realiza un push:
-
-`git add questions.yml
-git commit -m "Nueva pregunta añadida"
-git push origin main`
+	```
+		git add questions.yml
+		git commit -m "Nueva pregunta añadida"
+		git push origin main
+	```
 
 ¡Mira la notificación en tu canal de Slack! 🎉
 
