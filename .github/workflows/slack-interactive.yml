@@ -18,10 +18,14 @@ jobs:
         
       - name: Get Questions
         run: |
-          QUESTION=$(shuf -n 1 questions.yml | cut -d '-' -f2-)
+          QUESTION=$(shuf -n 1 ./questions.yml | cut -d '-' -f1-)
           echo "QUESTION=$QUESTION" >> $GITHUB_ENV
+          echo $QUESTION
     
-      # - name: Slack Notification
-      #   uses: rtCamp/action-slack-notify@v2
-      #   env:
-      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_MESSAGE: We have a new question! "${{ env.QUESTION }}"
+          SLACK_TITLE: Quiz
+          SLACK_COLOR: good
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
