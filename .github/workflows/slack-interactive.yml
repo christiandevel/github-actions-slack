@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'questions.yml'
   workflow_dispatch:
     inputs:
       trigger_quiz:
@@ -14,25 +16,6 @@ on:
         required: true
         default: 'What is the best way to deploy a Node.js app?'
 jobs:
-  validate-questions:
-    runs-on: ubuntu-latest
-    outputs:
-      has_new_question: ${{ steps.check-questions.outputs.has_new_question }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: Validate Questions
-        id: check-questions
-        run: |
-          if grep -q 'questions.yml'; then
-            echo "Questions are valid"
-            echo "has_new_question=true" >> $GITHUB_OUTPUT
-          else
-            echo "Questions are not valid"
-            echo "has_new_question=false" >> $GITHUB_OUTPUT
-
   slack-interactive-manual:
     if: ${{ inputs.trigger_quiz }}
     runs-on: ubuntu-latest
