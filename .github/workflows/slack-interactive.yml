@@ -1,0 +1,22 @@
+name: Slack Interactive Scoreboard
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      trigger_quiz:
+        description: 'Do you want to trigger the quiz?'
+        required: true
+        default: 'yes'
+jobs:
+  slack-interactive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+    
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
