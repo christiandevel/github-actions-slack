@@ -11,6 +11,10 @@ on:
         description: 'Do you want to trigger the quiz?'
         required: true
         default: 'yes'
+      name:
+        description: 'What is your name?'
+        required: true
+        default: 'Chris'
       question:
         description: 'What is your question?'
         required: true
@@ -26,13 +30,13 @@ jobs:
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_MESSAGE: We have a new question! ${{ inputs.question }}
+          SLACK_MESSAGE: We have a new question! ${{ inputs.name }}: ${{ inputs.question }}
           SLACK_TITLE: Quiz
           SLACK_COLOR: good
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           
   slack-interactive:
-    if: needs.validate-questions.outputs.has_new_question == 'true'
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
