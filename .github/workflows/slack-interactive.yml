@@ -19,10 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: Get Questions
-        
+        uses: actions/checkout@v2        
     
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
