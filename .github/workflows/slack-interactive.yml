@@ -9,8 +9,31 @@ on:
         description: 'Do you want to trigger the quiz?'
         required: true
         default: 'yes'
+      question:
+        description: 'What is your question?'
+        required: true
+        default: 'What is the best way to deploy a Node.js app?'
 jobs:
+  slack-interactive-manual:
+    if: ${{ inputs.trigger_quiz }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Get Questions
+        
+    
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_MESSAGE: We have a new question! ${{ inputs.question }}
+          SLACK_TITLE: Quiz
+          SLACK_COLOR: good
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          
   slack-interactive:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
